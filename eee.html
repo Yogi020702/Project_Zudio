@@ -1,0 +1,149 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        .col-3,.col-2{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="container">
+        <div class="row justify-content-evenly">
+            <div class="col-3 ">Hello</div>
+            <div class="col-2">Hello</div>
+            <div class="col-2">Hello</div>
+            <div class="col-3">Hello</div>
+        </div>
+    </div>
+
+</body>
+</html> -->
+
+<style>
+    .carousel {
+        background: #2c778f;
+    }
+
+    .carousel-item {
+        height: 350px;
+    }
+
+    .carousel-item img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-height: 350px;
+        width: 30%;
+    }
+
+    #toggleCarousel {
+        right: 0;
+        position: absolute;
+        bottom: 0;
+        border-radius: 50%;
+    }
+
+    .carousel-indicators li {
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+
+    }
+
+    .carousel-caption {
+        height: 100%;
+        left: 35%;
+        right: 10%;
+        bottom: 30px;
+        text-align: center;
+        padding: 0px auto;
+        transform: translateY(35%);
+    }
+</style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<div class="container pt-3">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <div class="row row-content">
+        <div class="col">
+            <div id="demo" class="carousel slide" data-ride="carousel">
+
+                <!-- Indicators -->
+                <ul class="carousel-indicators justify-content-end my-0 mx-5 p-0">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                </ul>
+
+                <!-- The slideshow -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img class="d-block img-fluid" src="https://www.w3schools.com/html/img_girl.jpg"
+                            alt="Los Angeles">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h2>First Thumbnail label</h2>
+                            <p class="d-none d-sm-block">Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+                                Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies
+                                vehicula ut id elit.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid" src="https://www.w3schools.com/html/pic_trulli.jpg"
+                            alt="Chicago">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h2>Second Thumbnail label</h2>
+                            <p class="d-none d-sm-block">Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+                                Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies
+                                vehicula ut id elit.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid" src="https://www.w3schools.com/html/img_chania.jpg"
+                            alt="New York">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h2>Third Thumbnail label</h2>
+                            <p class="d-none d-sm-block">Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+                                Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies
+                                vehicula ut id elit.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+                <button id="toggleCarousel"><i class="fa fa-pause"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        /* Initialize Carousel */
+        var paused = 0;
+        $('demo').carousel({
+            interval: 500,
+            pause: 0
+        });
+
+        /* Play trigger */
+        $('#toggleCarousel').click(function () {
+            var state = (paused) ? 'cycle' : 'pause';
+            paused = (paused) ? 0 : 1;
+            $('#demo').carousel(state);
+            $(this).find('i').toggleClass('fa-play fa-pause');
+        });
+    });
+</script>
